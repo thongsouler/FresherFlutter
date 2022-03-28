@@ -22,6 +22,8 @@ class _LoginPageState extends State<LoginPage> {
           autofocus: false,
           initialValue: '120C',
           decoration: InputDecoration(
+            filled: true,
+            fillColor: Colors.grey,
             contentPadding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(4)),
           ),
@@ -34,6 +36,8 @@ class _LoginPageState extends State<LoginPage> {
           initialValue: 'matkhau',
           obscureText: true,
           decoration: InputDecoration(
+            filled: true,
+            fillColor: Colors.grey,
             contentPadding: const EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(4)),
           ),
@@ -55,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
         onPressed: () {
           Navigator.of(context).pushNamed(HomePage.tag);
         },
-        color: Colors.lightBlueAccent,
+        color: Color.fromARGB(255, 60, 70, 199),
         child: const Text('Đăng nhập', style: TextStyle(color: Colors.white)),
       ),
     );
@@ -63,14 +67,46 @@ class _LoginPageState extends State<LoginPage> {
     final forgotLabel = FlatButton(
       child: const Text(
         'Quên mật khẩu',
-        style: TextStyle(color: Colors.black54),
+        style: TextStyle(color: Colors.grey),
       ),
       onPressed: () {},
     );
-
+    final helpRow = Column(children: <Widget>[
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Expanded(
+            child: Column(
+              children: <Widget>[
+                Image.asset(
+                  'assets/images/kh.png',
+                ),
+                Text('cat')
+              ],
+            ),
+          ),
+          Expanded(
+            child: Column(
+              children: <Widget>[
+                Image.asset('assets/images/kh.png'),
+                Text('cat')
+              ],
+            ),
+          ),
+          Expanded(
+            child: Column(
+              children: <Widget>[
+                Image.asset('assets/images/kh.png'),
+                Text('cat')
+              ],
+            ),
+          ),
+        ],
+      ),
+    ]);
     return Scaffold(
       // backgroundColor: Color(0x3C4457),
-      backgroundColor: Colors.lightBlue,
+      backgroundColor: Color.fromARGB(31, 37, 37, 37),
       body: ListView(
         shrinkWrap: true,
         // padding: EdgeInsets.only(left: 24.0, right: 24.0),
@@ -78,13 +114,14 @@ class _LoginPageState extends State<LoginPage> {
           logo,
           SizedBox(height: 48.0),
           textLogin,
-          SizedBox(height: 48.0),
+          SizedBox(height: 16.0),
           email,
-          SizedBox(height: 8.0),
+          SizedBox(height: 12.0),
           password,
-          SizedBox(height: 24.0),
+          // SizedBox(height: 12.0),
           loginButton,
-          forgotLabel
+          forgotLabel,
+          helpRow,
         ],
       ),
     );
