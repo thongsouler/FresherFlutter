@@ -38,7 +38,14 @@ class _LoginPageState extends State<LoginPage> {
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(4)),
           ),
         ));
-
+    final textLogin = Container(
+      child: const Text(
+        'Đăng Nhập',
+        style: TextStyle(
+            fontSize: 24, color: Colors.white, fontWeight: FontWeight.bold),
+        textAlign: TextAlign.center,
+      ),
+    );
     final loginButton = Padding(
       padding: const EdgeInsets.only(left: 20, right: 20, top: 12),
       child: RaisedButton(
@@ -48,7 +55,6 @@ class _LoginPageState extends State<LoginPage> {
         onPressed: () {
           Navigator.of(context).pushNamed(HomePage.tag);
         },
-        padding: const EdgeInsets.all(12),
         color: Colors.lightBlueAccent,
         child: const Text('Đăng nhập', style: TextStyle(color: Colors.white)),
       ),
@@ -70,6 +76,8 @@ class _LoginPageState extends State<LoginPage> {
         // padding: EdgeInsets.only(left: 24.0, right: 24.0),
         children: <Widget>[
           logo,
+          SizedBox(height: 48.0),
+          textLogin,
           SizedBox(height: 48.0),
           email,
           SizedBox(height: 8.0),
